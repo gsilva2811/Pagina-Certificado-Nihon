@@ -1,0 +1,181 @@
+/* CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    align-items: center;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0;
+    padding: 0;
+}
+
+.certificate {
+    background: white;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    page-break-after: always;
+}
+
+.certificate:last-child {
+    page-break-after: auto;
+}
+
+.border-left {
+    position: absolute;
+    left: 90px;
+    top: 0;
+    width: 95px;
+    height: 100%;
+    background-color: #FF0000 !important;
+    z-index: 1;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+.logo-circle {
+    position: absolute;
+    top: 5px;
+    width: 230px;
+    height: 230px;
+    left: 20px;
+    z-index: 2;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.fpk-logo {
+    position: absolute;
+    right: 40px;
+    top: 40px;
+    width: 150px;
+    height: auto;
+    text-align: center;
+}
+
+.fpk-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.content {
+    padding: 45px 80px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 310%;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+}
+
+.watermark {
+    position: fixed;
+    left: 50%;
+    top: 100px;
+    transform: translate(-50%, 0);
+    width: 500px;
+    height: 500px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.15;
+}
+
+.watermark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.text-content {
+    position: relative;
+    z-index: 1;
+}
+
+.recipient {
+    margin: 70px 0 30px 0;
+}
+
+.content strong {
+    color: #dc0000;
+}
+
+.signatures {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 166px;
+    padding: 0 40px;
+}
+
+.signature {
+    text-align: center;
+    width: 300px;
+}
+
+.signature-line {
+    border-top: 2px solid black;
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+.cbk-logo {
+    width: 80px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cbk-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+
+/* Regras específicas para impressão */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        color-adjust: exact !important;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .certificate {
+        page-break-inside: avoid;
+        height: 100%;
+        overflow: visible;
+    }
+
+    .border-left,
+    .logo-circle,
+    .cbk-logo {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+}
